@@ -5,8 +5,8 @@ class NameGenerator:
 
     def howManyNames(self):
         print(f"Here are all the names, in total there are {len(objs)} unique names.")
-        for name in  objs:
-            print(name)
+        for name, value in  objs.items():
+            print(name, value)
 
     def bandName(self):
         print(f'Haza, your new band name, enjoy: {self.resultingName}')
@@ -27,11 +27,13 @@ i = True
 objs = {}
 numb = 1
 while i: # stores user input in a dictionary and displays current band name
-    name = 'Bandname {}'.format(numb)
+    name = 'Bandname {}:'.format(numb)
     cityName = input('What is your childhood city?\n')
     petName = input('What is/was your pets name?\n')
-    printingStuff = NameGenerator('', cityName, petName)
-    objs[name, printingStuff.resultingName] = name, printingStuff.resultingName
+    printingStuff = NameGenerator(name, cityName, petName)
+    objs[name] = printingStuff.resultingName
+    print(printingStuff.resultingName)
+
 
     numb += 1
     repeat = True
